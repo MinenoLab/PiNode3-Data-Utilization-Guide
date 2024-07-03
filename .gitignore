@@ -1,0 +1,9 @@
+
+notebooks/sample/*
+notebooks/*.mp4
+
+notebooks/dataset/*
+notebooks/runs/**
+notebooks/*.pkl
+
+**.pyc
