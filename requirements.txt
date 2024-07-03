@@ -1,0 +1,8 @@
+influxdb-client
+opencv-python
+paramiko
+scp
+ipywidgets
+matplotlib
+yolov5
+torch

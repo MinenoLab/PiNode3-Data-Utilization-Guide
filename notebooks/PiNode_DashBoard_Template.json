@@ -1,0 +1,410 @@
+[
+    {
+        "apiVersion": "influxdata.com/v2alpha1",
+        "kind": "Label",
+        "metadata": {
+            "name": "ecstatic-beaver-d0b001"
+        },
+        "spec": {
+            "color": "#0b3a8d",
+            "name": "PiNode"
+        }
+    },
+    {
+        "apiVersion": "influxdata.com/v2alpha1",
+        "kind": "Dashboard",
+        "metadata": {
+            "name": "friendly-torvalds-50b001"
+        },
+        "spec": {
+            "associations": [
+                {
+                    "kind": "Label",
+                    "name": "ecstatic-beaver-d0b001"
+                }
+            ],
+            "charts": [
+                {
+                    "colors": [
+                        {
+                            "id": "0",
+                            "name": "laser",
+                            "type": "min",
+                            "hex": "#00C9FF"
+                        },
+                        {
+                            "id": "1",
+                            "name": "ruby",
+                            "type": "max",
+                            "hex": "#BF3D5E",
+                            "value": 100
+                        }
+                    ],
+                    "decimalPlaces": 1,
+                    "height": 4,
+                    "kind": "Gauge",
+                    "name": "湿度[%]",
+                    "queries": [
+                        {
+                            "query": "from(bucket: \"pinode\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"00\")\n  |> filter(fn: (r) => r[\"_field\"] == \"humidity\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")"
+                        }
+                    ],
+                    "staticLegend": {},
+                    "suffix": "%",
+                    "tickSuffix": "%",
+                    "width": 3
+                },
+                {
+                    "axes": [
+                        {
+                            "base": "10",
+                            "name": "x",
+                            "scale": "linear"
+                        },
+                        {
+                            "base": "10",
+                            "name": "y",
+                            "scale": "linear",
+                            "suffix": "%"
+                        }
+                    ],
+                    "colorizeRows": true,
+                    "colors": [
+                        {
+                            "id": "F16WcOY8Ri-enQjIyTWg3",
+                            "name": "Nineteen Eighty Four",
+                            "type": "scale",
+                            "hex": "#31C0F6"
+                        },
+                        {
+                            "id": "KWT3wg0eP8Bf9O_d89QtE",
+                            "name": "Nineteen Eighty Four",
+                            "type": "scale",
+                            "hex": "#A500A5"
+                        },
+                        {
+                            "id": "hQOPqwd1Wi1zQo-3w8Fum",
+                            "name": "Nineteen Eighty Four",
+                            "type": "scale",
+                            "hex": "#FF7E27"
+                        }
+                    ],
+                    "geom": "line",
+                    "height": 4,
+                    "hoverDimension": "auto",
+                    "kind": "Xy",
+                    "legendColorizeRows": true,
+                    "legendOpacity": 1,
+                    "legendOrientationThreshold": 100000000,
+                    "name": "湿度[%](24H)",
+                    "opacity": 1,
+                    "orientationThreshold": 100000000,
+                    "position": "overlaid",
+                    "queries": [
+                        {
+                            "query": "from(bucket: \"pinode\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"00\")\n  |> filter(fn: (r) => r[\"_field\"] == \"humidity\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")"
+                        }
+                    ],
+                    "staticLegend": {
+                        "colorizeRows": true,
+                        "opacity": 1,
+                        "orientationThreshold": 100000000,
+                        "widthRatio": 1
+                    },
+                    "width": 3,
+                    "widthRatio": 1,
+                    "xCol": "_time",
+                    "yCol": "_value",
+                    "yPos": 4
+                },
+                {
+                    "colors": [
+                        {
+                            "id": "0",
+                            "name": "laser",
+                            "type": "min",
+                            "hex": "#00C9FF"
+                        },
+                        {
+                            "id": "1",
+                            "name": "ruby",
+                            "type": "max",
+                            "hex": "#BF3D5E",
+                            "value": 40
+                        }
+                    ],
+                    "decimalPlaces": 1,
+                    "height": 4,
+                    "kind": "Gauge",
+                    "name": "温度[℃]",
+                    "queries": [
+                        {
+                            "query": "from(bucket: \"pinode\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"00\")\n  |> filter(fn: (r) => r[\"_field\"] == \"temperature\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")"
+                        }
+                    ],
+                    "staticLegend": {},
+                    "suffix": "℃",
+                    "tickSuffix": "℃",
+                    "width": 3,
+                    "xPos": 3
+                },
+                {
+                    "axes": [
+                        {
+                            "base": "10",
+                            "name": "x",
+                            "scale": "linear"
+                        },
+                        {
+                            "base": "10",
+                            "name": "y",
+                            "scale": "linear",
+                            "suffix": "℃"
+                        }
+                    ],
+                    "colorizeRows": true,
+                    "colors": [
+                        {
+                            "id": "F16WcOY8Ri-enQjIyTWg3",
+                            "name": "Nineteen Eighty Four",
+                            "type": "scale",
+                            "hex": "#31C0F6"
+                        },
+                        {
+                            "id": "KWT3wg0eP8Bf9O_d89QtE",
+                            "name": "Nineteen Eighty Four",
+                            "type": "scale",
+                            "hex": "#A500A5"
+                        },
+                        {
+                            "id": "hQOPqwd1Wi1zQo-3w8Fum",
+                            "name": "Nineteen Eighty Four",
+                            "type": "scale",
+                            "hex": "#FF7E27"
+                        }
+                    ],
+                    "geom": "line",
+                    "height": 4,
+                    "hoverDimension": "auto",
+                    "kind": "Xy",
+                    "legendColorizeRows": true,
+                    "legendOpacity": 1,
+                    "legendOrientationThreshold": 100000000,
+                    "name": "温度[℃](24H)",
+                    "opacity": 1,
+                    "orientationThreshold": 100000000,
+                    "position": "overlaid",
+                    "queries": [
+                        {
+                            "query": "from(bucket: \"pinode\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"00\")\n  |> filter(fn: (r) => r[\"_field\"] == \"temperature\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")"
+                        }
+                    ],
+                    "staticLegend": {
+                        "colorizeRows": true,
+                        "opacity": 1,
+                        "orientationThreshold": 100000000,
+                        "widthRatio": 1
+                    },
+                    "width": 3,
+                    "widthRatio": 1,
+                    "xCol": "_time",
+                    "xPos": 3,
+                    "yCol": "_value",
+                    "yPos": 4
+                },
+                {
+                    "colors": [
+                        {
+                            "id": "0",
+                            "name": "laser",
+                            "type": "min",
+                            "hex": "#00C9FF"
+                        },
+                        {
+                            "id": "1",
+                            "name": "ruby",
+                            "type": "max",
+                            "hex": "#BF3D5E",
+                            "value": 10000
+                        }
+                    ],
+                    "decimalPlaces": 0,
+                    "height": 4,
+                    "kind": "Gauge",
+                    "name": "内部照度[%]",
+                    "queries": [
+                        {
+                            "query": "from(bucket: \"pinode\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"00\")\n  |> filter(fn: (r) => r[\"_field\"] == \"i_v_light\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")"
+                        }
+                    ],
+                    "staticLegend": {},
+                    "suffix": "lux",
+                    "tickSuffix": "lux",
+                    "width": 3,
+                    "xPos": 6
+                },
+                {
+                    "axes": [
+                        {
+                            "base": "10",
+                            "name": "x",
+                            "scale": "linear"
+                        },
+                        {
+                            "base": "10",
+                            "name": "y",
+                            "scale": "linear",
+                            "suffix": "lux"
+                        }
+                    ],
+                    "colorizeRows": true,
+                    "colors": [
+                        {
+                            "id": "F16WcOY8Ri-enQjIyTWg3",
+                            "name": "Nineteen Eighty Four",
+                            "type": "scale",
+                            "hex": "#31C0F6"
+                        },
+                        {
+                            "id": "KWT3wg0eP8Bf9O_d89QtE",
+                            "name": "Nineteen Eighty Four",
+                            "type": "scale",
+                            "hex": "#A500A5"
+                        },
+                        {
+                            "id": "hQOPqwd1Wi1zQo-3w8Fum",
+                            "name": "Nineteen Eighty Four",
+                            "type": "scale",
+                            "hex": "#FF7E27"
+                        }
+                    ],
+                    "geom": "line",
+                    "height": 4,
+                    "hoverDimension": "auto",
+                    "kind": "Xy",
+                    "legendColorizeRows": true,
+                    "legendOpacity": 1,
+                    "legendOrientationThreshold": 100000000,
+                    "name": "内部照度[lux](24H)",
+                    "opacity": 1,
+                    "orientationThreshold": 100000000,
+                    "position": "overlaid",
+                    "queries": [
+                        {
+                            "query": "from(bucket: \"pinode\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"00\")\n  |> filter(fn: (r) => r[\"_field\"] == \"i_v_light\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")"
+                        }
+                    ],
+                    "staticLegend": {
+                        "colorizeRows": true,
+                        "opacity": 1,
+                        "orientationThreshold": 100000000,
+                        "widthRatio": 1
+                    },
+                    "width": 3,
+                    "widthRatio": 1,
+                    "xCol": "_time",
+                    "xPos": 6,
+                    "yCol": "_value",
+                    "yPos": 4
+                },
+                {
+                    "colors": [
+                        {
+                            "id": "0",
+                            "name": "laser",
+                            "type": "min",
+                            "hex": "#00C9FF"
+                        },
+                        {
+                            "id": "1",
+                            "name": "ruby",
+                            "type": "max",
+                            "hex": "#BF3D5E",
+                            "value": 10000
+                        }
+                    ],
+                    "decimalPlaces": 0,
+                    "height": 4,
+                    "kind": "Gauge",
+                    "name": "外部照度[lux]",
+                    "queries": [
+                        {
+                            "query": "from(bucket: \"pinode\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"00\")\n  |> filter(fn: (r) => r[\"_field\"] == \"humidity\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")"
+                        }
+                    ],
+                    "staticLegend": {},
+                    "suffix": "lux",
+                    "tickSuffix": "lux",
+                    "width": 3,
+                    "xPos": 9
+                },
+                {
+                    "axes": [
+                        {
+                            "base": "10",
+                            "name": "x",
+                            "scale": "linear"
+                        },
+                        {
+                            "base": "10",
+                            "name": "y",
+                            "scale": "linear",
+                            "suffix": "lux"
+                        }
+                    ],
+                    "colorizeRows": true,
+                    "colors": [
+                        {
+                            "id": "F16WcOY8Ri-enQjIyTWg3",
+                            "name": "Nineteen Eighty Four",
+                            "type": "scale",
+                            "hex": "#31C0F6"
+                        },
+                        {
+                            "id": "KWT3wg0eP8Bf9O_d89QtE",
+                            "name": "Nineteen Eighty Four",
+                            "type": "scale",
+                            "hex": "#A500A5"
+                        },
+                        {
+                            "id": "hQOPqwd1Wi1zQo-3w8Fum",
+                            "name": "Nineteen Eighty Four",
+                            "type": "scale",
+                            "hex": "#FF7E27"
+                        }
+                    ],
+                    "geom": "line",
+                    "height": 4,
+                    "hoverDimension": "auto",
+                    "kind": "Xy",
+                    "legendColorizeRows": true,
+                    "legendOpacity": 1,
+                    "legendOrientationThreshold": 100000000,
+                    "name": "外部照度[lux](24H)",
+                    "opacity": 1,
+                    "orientationThreshold": 100000000,
+                    "position": "overlaid",
+                    "queries": [
+                        {
+                            "query": "from(bucket: \"pinode\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"00\")\n  |> filter(fn: (r) => r[\"_field\"] == \"u_v_light\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")"
+                        }
+                    ],
+                    "staticLegend": {
+                        "colorizeRows": true,
+                        "opacity": 1,
+                        "orientationThreshold": 100000000,
+                        "widthRatio": 1
+                    },
+                    "width": 3,
+                    "widthRatio": 1,
+                    "xCol": "_time",
+                    "xPos": 9,
+                    "yCol": "_value",
+                    "yPos": 4
+                }
+            ],
+            "description": "PiNode DashBoard",
+            "name": "PiNode DashBoard"
+        }
+    }
+]
