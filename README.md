@@ -79,14 +79,14 @@ PiNode3-Data-Utilization-Guide/
 ## Chapter1 : データ取得
 
 InfluxDBからデータを取得するガイドを提供します。
-https://github.com/ShimadaTakutoLuke/PiNode3-Data-Utilization-Guide/blob/53cd77e619834b545cbcc426be63e544f2621e83/notebooks/chapter1.md
+[https://github.com/MinenoLab/PiNode3-Data-Utilization-Guide/blob/main/notebooks/chapter1.md](https://github.com/MinenoLab/PiNode3-Data-Utilization-Guide/blob/main/notebooks/chapter1.md)
 
 ## Chapter2 : リアルタイムデータ監視例
 
 InfluxDBを使用してリアルタイムデータを監視する方法について説明します。
-https://github.com/ShimadaTakutoLuke/PiNode3-Data-Utilization-Guide/blob/53cd77e619834b545cbcc426be63e544f2621e83/notebooks/chapter2.md
+[https://github.com/ShimadaTakutoLuke/PiNode3-Data-Utilization-Guide/blob/53cd77e619834b545cbcc426be63e544f2621e83/notebooks/chapter2.md](https://github.com/MinenoLab/PiNode3-Data-Utilization-Guide/blob/main/notebooks/chapter2.md)
 
 ## Chapter3 : 画像とセンサデータの分析例
 
 PiNode3から収集した画像およびセンサデータを分析する方法について説明します。
-https://github.com/ShimadaTakutoLuke/PiNode3-Data-Utilization-Guide/blob/53cd77e619834b545cbcc426be63e544f2621e83/notebooks/chapter3.ipynb
+[https://github.com/ShimadaTakutoLuke/PiNode3-Data-Utilization-Guide/blob/53cd77e619834b545cbcc426be63e544f2621e83/notebooks/chapter3.ipynb](https://github.com/MinenoLab/PiNode3-Data-Utilization-Guide/blob/main/notebooks/chapter3.ipynb)
